@@ -1,6 +1,10 @@
 # LLM Wiki Librarian
 
-A small, local-first template for building a Markdown knowledge base with an AI agent.
+A local-first template for building a Markdown knowledge base that your AI agents can read, update, and cite.
+
+In plain language: this is a starter kit for giving your AI work a **home**.
+
+Instead of leaving useful ideas scattered across Claude, ChatGPT, Codex, terminal sessions, documents, and notes, you put them into one folder. The AI preserves the original source, turns it into readable wiki pages, and keeps a chronological register of where each idea came from.
 
 This project has two parts:
 
@@ -8,6 +12,30 @@ This project has two parts:
 2. **Librarian layer**: an added intake and provenance workflow for bringing in chats, notes, terminal transcripts, and source material from many AI platforms without losing where they came from.
 
 The goal is simple: give yourself and your AI agents a one-stop shop for memory that is readable, editable, linkable, and versionable with Git.
+
+## Start Here
+
+If you are non-technical, use it like this:
+
+1. Download this repository as a ZIP from GitHub.
+2. Unzip it somewhere on your computer.
+3. Open that folder in an AI coding agent such as Codex, Claude Code, Cursor, or another agent that can read and edit local files.
+4. Tell the agent:
+
+```text
+Read AGENTS.md and schema.md. Help me set this up as my personal AI knowledge base.
+```
+
+5. Put chats or notes into `inbox/`.
+6. Tell the agent:
+
+```text
+Librarian, process the inbox.
+```
+
+That is the basic loop.
+
+There is no server to run and no database to install. This is a folder of Markdown files plus instructions your AI agent can follow.
 
 ## Attribution
 
@@ -36,6 +64,34 @@ Use this if you want:
 - a repeatable workflow your AI agent can follow
 
 This is not a vector database, SaaS app, or automatic connector system. It is a practical file-based memory layer that any coding agent can read and maintain.
+
+## Why It Is Helpful
+
+Modern AI work happens everywhere. One day the useful thread is in Claude mobile. The next day it is in ChatGPT, Codex, a terminal log, a meeting transcript, or a document.
+
+The problem is not only storage. The problem is traceability:
+
+- Where did this idea come from?
+- Which platform was it in?
+- What date did it happen?
+- What was the original wording?
+- What is the latest source about this project?
+
+The Librarian layer answers those questions by keeping both the raw source and the processed wiki page.
+
+## What Each Folder Means
+
+- `raw/` keeps the original source material. The AI should not rewrite these files.
+- `wiki/` is the readable knowledge base.
+- `wiki/sources/` holds compiled summaries of imported chats, notes, and documents.
+- `wiki/concepts/` holds reusable ideas that appear across sources.
+- `wiki/index.md` is the map of the wiki.
+- `wiki/log.md` is the chronological change log.
+- `wiki/source-register.md` is the provenance ledger: date, platform, project, raw file, draft page.
+- `inbox/` is the drop zone for new material waiting to be imported.
+- `prompts/` contains copy-paste prompts for external AI platforms.
+- `scripts/` contains small helper scripts.
+- `AGENTS.md`, `CLAUDE.md`, and `schema.md` tell AI agents how to work with the repository.
 
 ## Folder Structure
 
@@ -85,6 +141,20 @@ Librarian, process the inbox.
 
 On Windows, you can also double-click `NEW_INTAKE.cmd` to create a prefilled inbox packet.
 
+## How To Give This To An Agent
+
+Use this prompt:
+
+```text
+This folder is my LLM Wiki Librarian.
+
+Read AGENTS.md, schema.md, wiki/index.md, and wiki/source-register.md.
+
+When I give you new chats or notes, preserve the raw text in raw/, compile a draft page in wiki/sources/, update wiki/index.md and wiki/log.md, and rebuild wiki/source-register.md.
+```
+
+For Claude Code specifically, the agent should also read `CLAUDE.md`.
+
 ## Fast Import Packet
 
 At the end of any AI chat you want to save, paste:
@@ -123,6 +193,12 @@ The Librarian should:
 - append to `wiki/log.md`
 - rebuild `wiki/source-register.md`
 - report what changed
+
+## Important Limits
+
+The Librarian can only search and organize material that has already been imported into the repository. It does not automatically see your Claude, ChatGPT, phone, browser, or terminal history.
+
+To make a source searchable, you must put it into `inbox/` or paste it into a local agent session and ask the Librarian to ingest it.
 
 ## What You Can Ask Later
 
