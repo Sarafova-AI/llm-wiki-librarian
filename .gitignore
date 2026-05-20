@@ -1,0 +1,7 @@
+inbox/processed/*
+!inbox/processed/.gitkeep
+inbox/needs-metadata/*
+!inbox/needs-metadata/.gitkeep
+.obsidian/workspace.json
+.DS_Store
+Thumbs.db
