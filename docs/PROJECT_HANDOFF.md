@@ -8,11 +8,15 @@ Public URL: https://github.com/Sarafova-AI/llm-wiki-librarian
 
 ## Purpose
 
-This repository is a public skeleton for a local-first AI knowledge base.
+This repository is a public idea skeleton for a local-first AI knowledge base.
 
 It combines Andrej Karpathy's LLM Wiki pattern with an added Librarian layer for intake, provenance, and cross-platform recall.
 
 The goal is to give people a simple structure they can download, give to an AI coding agent, and adapt into their own private brain.
+
+The public framing should stay close to Karpathy's gist format: a long-form idea artifact with a usable starter structure attached, not a polished app or production package.
+
+The repo should be presented as a practical continuity layer, not as a finished AI memory product. Its strongest public framing is: if your work moves across Claude, ChatGPT, Codex, terminal sessions, mobile notes, and documents, this gives the next human or agent a traceable place to start.
 
 ## What Comes From Karpathy's Idea
 
@@ -51,8 +55,24 @@ The Librarian layer adds:
 - source metadata fields
 - raw source preservation rules
 - `wiki/source-register.md` as a chronological provenance ledger
+- "start from here" context for the next agent
 - helper scripts for intake and register rebuilding
 - simple user phrases such as `Librarian, ingest this.`
+
+## Why The Template Stays Simple
+
+A more seamless version would use live connectors, vector search, automatic chat capture, and platform-specific extraction. That direction is useful, but it can become fragile before the surrounding AI-platform infrastructure is stable enough.
+
+This template intentionally keeps the reliable layer:
+
+- Markdown files
+- raw source preservation
+- explicit provenance
+- readable indexes
+- Git history
+- agent instructions
+
+Do not over-position the project as autonomous memory. Position it as the lower-friction layer that preserves continuity while more seamless AI-memory infrastructure is still evolving.
 
 ## Current Repository State
 
@@ -191,4 +211,4 @@ These should stay optional. The core value is the simple Markdown and provenance
 
 ## One-Sentence Public Description
 
-Based on Andrej Karpathy's LLM Wiki pattern, this template adds a Librarian layer for importing AI chats and notes from many platforms into one traceable Markdown knowledge base.
+Based on Andrej Karpathy's LLM Wiki pattern, this template adds a Librarian layer for importing AI chats, notes, and terminal sessions from many platforms into one traceable Markdown knowledge base.

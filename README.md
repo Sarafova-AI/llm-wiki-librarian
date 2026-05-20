@@ -1,16 +1,34 @@
 # LLM Wiki Librarian
 
-A local-first template for building a Markdown knowledge base that AI agents can read, update, and cite.
+This is an idea skeleton, not a finished app.
 
-In plain language: this is a starter kit for giving your AI work a durable home.
+It extends Andrej Karpathy's `llm-wiki` pattern with a Librarian intake layer for people whose AI work is scattered across Claude, ChatGPT, Codex, terminals, mobile sessions, and documents.
 
-Most useful AI work is scattered. One insight is in Claude. Another is in ChatGPT. A decision is buried in a terminal session. A project idea is in a phone transcript. A good explanation is in a document. After a few weeks, you remember that something happened, but not where it happened, what date it happened, or which version was the real one.
+Use it as a starting structure. Give it to an AI coding agent and adapt it to your own private knowledge base.
 
-This repository is a simple answer to that problem.
+Karpathy described the abstract LLM Wiki pattern: raw sources, an LLM-maintained Markdown wiki, and a schema that teaches the agent how to maintain it. This repo keeps that spirit and adds a practical Librarian layer for the part that breaks in real work: intake, provenance, source dates, AI surfaces, and handoff drift.
 
-It gives you a folder where original sources are preserved, important ideas are turned into readable wiki pages, and every imported source keeps its date, platform, project, and path back to the raw material.
+There is no server to run. There is no database to install. The core is Markdown, folders, Git, prompts, small helper scripts, and instructions that your AI coding agent can follow.
 
-There is no server to run. There is no database to install. The core is Markdown, folders, Git, and instructions that your AI coding agent can follow.
+## Why This Exists
+
+Some of the criticism I see around Karpathy's `llm-wiki` idea is that it sounds designed mainly for researchers.
+
+But if your work requires daily operation across different AI work surfaces - Claude app, Claude web, Claude Code, terminal Claude Code, ChatGPT, Codex app, Codex terminal, Codex CLI, mobile sessions - the work accumulates day after day in places that do not talk to each other.
+
+After a while it becomes hard to remember where a project phase was developed, where an idea first appeared, which session shaped it with you, and which context snapshot is the one you can trust before the whole thing turns into handoff drift.
+
+For my own use case, I spent too many days and too many tokens trying to build the all-in-one seamless continuity system: vector DB, RAG-like retrieval, custom extraction, real-time capture from different AI surfaces, and all the bridges needed to make those pieces behave as one system.
+
+It took too much effort and too many tokens to read the signal: this is not the right moment to force seamless automatic transfer. Not because the idea is wrong, but because the surrounding infrastructure is not aligned enough yet for flawless cross-platform continuity that can deliver the work goal with stability and efficiency.
+
+That ambitious version stays in the private repo, waiting for its time.
+
+What I am sharing today is the interim layer: a Librarian addition on top of Karpathy's `llm-wiki` pattern, meant to relieve some of the pain now while the big labs are still brewing the next capability jump.
+
+And I think this is a pattern in AI development more generally. There are moments when the workaround needed to close a gap becomes bigger than the net value it gives back to the user. At that point, the pragmatic move is to stop investing there, put the larger idea on hold, and wait for the next jump in capabilities.
+
+This layer does not pretend to be seamless AI memory. It improves tracking, collecting, preserving provenance, and calling back the specific topic when the next AI session needs to continue from where the work actually stopped.
 
 ## The Idea
 
@@ -36,7 +54,7 @@ This repository does not copy the full gist text. It links to it and implements 
 
 The Librarian layer is an added extension by Petya Sarafova.
 
-It exists for a practical reason: real AI work does not happen in one place.
+It exists for a practical reason: real AI work does not happen in one place, and it is usually not clean before it becomes useful.
 
 You may have useful material from:
 
@@ -49,15 +67,16 @@ You may have useful material from:
 - mobile voice notes
 - documents, articles, and meeting notes
 
-The Librarian gives all of that material one standard intake door.
+The Librarian gives all of that material one standard intake door for both the human user and the next AI agent.
 
 It adds:
 
-- an `inbox/` for messy incoming material
+- an `inbox/` for scattered incoming material
 - a reusable import packet
 - raw source preservation
 - provider, surface, date, project, and title metadata
 - a source register for chronological recall
+- "start from here" context for the next agent
 - simple agent instructions for turning raw material into wiki pages
 
 The simple user phrase is:
@@ -78,13 +97,13 @@ This template is for people who want their AI work to compound instead of evapor
 
 It helps answer questions like:
 
-- Where did this idea come from?
-- Which platform was it in?
-- What date did it happen?
+- Where did this idea happen?
+- Which AI agent helped develop it?
+- Was it in a chat, a terminal session, a code session, a voice note, or a draft?
+- What project phase did it belong to?
 - What was the original wording?
-- What is the latest source about this project?
-- Which sources mention this concept?
 - What has already been decided?
+- How do I bring the next AI back to the right context without re-explaining everything?
 
 The important part is not only storage. It is traceability.
 
@@ -129,6 +148,7 @@ This is not:
 - a vector database
 - a SaaS app
 - an automatic connector to Claude, ChatGPT, or mobile apps
+- a seamless AI memory product
 - a replacement for Obsidian
 - a chatbot UI
 - a promise that the agent can see material you have not imported
@@ -328,6 +348,12 @@ The answer is only as complete as the material already imported into the reposit
 For a more detailed maintainer handoff, see:
 
 - `docs/PROJECT_HANDOFF.md`
+
+## Status
+
+Status: v0 idea skeleton.
+
+This repository is intentionally generic. It does not include my private populated brain, the more ambitious automation experiments, or real source material. Those stay private. The public repo shares the structure and the Librarian pattern so others can adapt it inside their own environment.
 
 ## Attribution
 
