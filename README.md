@@ -6,6 +6,10 @@ It extends Andrej Karpathy's `llm-wiki` pattern with a Librarian intake layer fo
 
 Use it as a starting structure. Give it to an AI coding agent and adapt it to your own private knowledge base.
 
+Companion idea note:
+
+- https://gist.github.com/Sarafova-AI/5cf5c886def7abcffa2872744b25dad2
+
 Karpathy described the abstract LLM Wiki pattern: raw sources, an LLM-maintained Markdown wiki, and a schema that teaches the agent how to maintain it. This repo keeps that spirit and adds a practical Librarian layer for the part that breaks in real work: intake, provenance, source dates, AI surfaces, and handoff drift.
 
 There is no server to run. There is no database to install. The core is Markdown, folders, Git, prompts, small helper scripts, and instructions that your AI coding agent can follow.

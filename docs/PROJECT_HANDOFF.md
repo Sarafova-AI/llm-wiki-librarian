@@ -6,6 +6,8 @@ Repository: `llm-wiki-librarian`
 
 Public URL: https://github.com/Sarafova-AI/llm-wiki-librarian
 
+Companion idea note: https://gist.github.com/Sarafova-AI/5cf5c886def7abcffa2872744b25dad2
+
 ## Purpose
 
 This repository is a public idea skeleton for a local-first AI knowledge base.
