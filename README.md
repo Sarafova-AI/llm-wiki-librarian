@@ -6,7 +6,7 @@ It extends Andrej Karpathy's `llm-wiki` pattern with a Librarian intake layer fo
 
 Use it as a starting structure. Give it to an AI coding agent and adapt it to your own private knowledge base.
 
-Read the companion idea note on GitHub Gist:
+Companion idea note on GitHub Gist:
 
 - https://gist.github.com/Sarafova-AI/5cf5c886def7abcffa2872744b25dad2
 
